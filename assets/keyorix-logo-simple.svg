@@ -1,0 +1,27 @@
+<svg width="120" height="32" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified Keyorix Logo for Headers/Footers -->
+  
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2D9CDB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Simplified Key Icon -->
+  <g transform="translate(0, 6)">
+    <!-- Key body -->
+    <rect x="2" y="8" width="12" height="4" rx="2" fill="url(#logoGradient)"/>
+    <!-- Key head (circle) -->
+    <circle cx="6" cy="10" r="6" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+    <!-- Key teeth -->
+    <rect x="14" y="9" width="2" height="1" fill="url(#logoGradient)"/>
+    <rect x="14" y="10.5" width="3" height="1" fill="url(#logoGradient)"/>
+    <!-- Security dot -->
+    <circle cx="6" cy="10" r="1.5" fill="#E6E6E6"/>
+  </g>
+  
+  <!-- Keyorix Text -->
+  <text x="28" y="21" font-family="Inter, sans-serif" font-size="16" font-weight="700" 
+        fill="#E6E6E6" letter-spacing="-0.01em">Keyorix</text>
+</svg>

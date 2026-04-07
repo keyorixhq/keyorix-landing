@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://keyorix.com/sitemap.xml
+
+# Disallow development files
+Disallow: /*.sh
+Disallow: /*.md
+Disallow: /test-*
+Disallow: /fix-*

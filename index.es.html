@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyorix – Seguro, Verificable, Simple - Gestión de Secretos</title>
+    <meta name="description"
+        content="Keyorix es una plataforma de seguridad abierta para gestionar secretos, claves y certificados con verificabilidad criptográfica, cifrado efímero e integración nativa en la nube.">
+    <meta name="keywords"
+        content="seguridad en la nube, gestión de secretos, cifrado, rotación de claves, DevSecOps, código abierto, confianza cero">
+    <link rel="canonical" href="https://keyorix.com/index.es.html">
+    <link rel="alternate" hreflang="es" href="https://keyorix.com/index.es.html">
+    <link rel="alternate" hreflang="en" href="https://keyorix.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Keyorix – Seguro, Verificable, Simple - Gestión de Secretos">
+    <meta property="og:description"
+        content="Plataforma de seguridad abierta para gestionar secretos, claves y certificados con verificabilidad criptográfica y cifrado efímero.">
+    <meta property="og:image" content="assets/og-keyorix.png">
+    <meta property="og:url" content="https://keyorix.com/index.es.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Keyorix – Seguro, Verificable, Simple - Gestión de Secretos">
+    <meta name="twitter:description"
+        content="Plataforma de seguridad abierta para gestionar secretos, claves y certificados con verificabilidad criptográfica y cifrado efímero.">
+    <meta name="twitter:image" content="assets/og-keyorix.png">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css?v=5">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="#home" class="logo">
+                    <img src="assets/keyorix-logo-simple.svg" alt="Keyorix" class="logo-img">
+                </a>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Inicio</a>
+                    <a href="#features" class="nav-link">Características</a>
+                    <a href="#architecture" class="nav-link">Arquitectura</a>
+                    <a href="#open-source" class="nav-link">Código Abierto</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="language-toggle">
+                        <a href="index.html" class="lang-link">EN</a>
+                        <a href="#" class="lang-link active">ES</a>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Empezar</a>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tagline">Seguro. Verificable. Simple.</div>
+                <h1 class="hero-title">
+                    Plataforma de seguridad abierta para<br>
+                    <span class="gradient-text">infraestructura en la nube moderna</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Keyorix es una plataforma de seguridad abierta para gestionar secretos, claves y certificados
+                    con verificabilidad criptográfica y cifrado efímero.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary btn-large">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Empezar
+                    </a>
+                    <a href="https://github.com/aibeshkov/KeyOrix" class="btn btn-secondary btn-large" target="_blank"
+                        rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19C4 20.5 4 16.5 2 16M22 16V22C22 22 17 20 12 22C7 20 2 22 2 22V16"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 2L22 7V13L12 18L2 13V7L12 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Ver en GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <div class="hero-visual">
+                    <svg class="security-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Construido para equipos de seguridad modernos</h2>
+                <p class="section-subtitle">
+                    Todo lo que necesitas para una gestión de secretos segura, auditable y automatizada con
+                    verificabilidad criptográfica.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Secretos Efímeros y Bóvedas Seguras</h3>
+                    <p class="feature-description">
+                        Keyorix utiliza secretos efímeros y verificables que caducan y se rotan automáticamente para
+                        habilitar un verdadero Zero Trust. Bóvedas seguras y credenciales efímeras permiten Web3,
+                        cómputo efímero, DevSecOps, nodos edge y dispositivos IoT, garantizando que los secretos existan
+                        solo el tiempo necesario.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Verificabilidad Criptográfica</h3>
+                    <p class="feature-description">
+                        Todas las acciones de acceso están aseguradas con pruebas criptográficas y protocolos de
+                        conocimiento cero. Cada interacción es verificable sin exponer datos sensibles, proporcionando
+                        confianza y responsabilidad total en sistemas cloud, on-prem, edge e IoT.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18 10H22L18 6M6 14H2L6 18M8 18V16C8 13.7909 9.79086 12 12 12C14.2091 12 16 13.7909 16 16V18"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Integración Multi-Entorno</h3>
+                    <p class="feature-description">
+                        Integración unificada en nube, on-prem, Kubernetes, entornos edge e IoT. Gestiona secretos,
+                        accesos y políticas de manera consistente en toda la infraestructura, habilitando operaciones
+                        seguras y verificables donde sea que se ejecuten tus cargas.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">API y CLI Amigables para Desarrolladores</h3>
+                    <p class="feature-description">
+                        Interfaces REST, GraphQL y CLI con SDKs para Python, Go, JavaScript y más. Integra secretos y
+                        políticas directamente en tu stack, incluyendo aplicaciones edge e IoT.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Arquitectura Zero Trust</h3>
+                    <p class="feature-description">
+                        Aplica un modelo Zero Trust en todas las capas: identidades, secretos y cargas nunca se confían
+                        implícitamente. Credenciales efímeras y pruebas criptográficas verifican continuamente el acceso
+                        en cloud, on-prem, edge y dispositivos IoT.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Cumplimiento y Estándares</h3>
+                    <p class="feature-description">
+                        Cumplimiento por diseño: NIS2, DORA, AI Act, GDPR, ENS. Controles integrados, cifrado,
+                        auditorías y residencia de datos aseguran trazabilidad, resiliencia y alineación regulatoria en
+                        todos los entornos.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Open-Core y Arquitectura de Plugins Extensible</h3>
+                    <p class="feature-description">
+                        Keyorix es open-core con funciones empresariales. Un sistema modular de plugins permite a la
+                        comunidad y desarrolladores externos ampliar la plataforma con integraciones personalizadas,
+                        nuevas funciones y flujos de trabajo — adaptándose a casos de uso en cloud, on-prem, edge e IoT.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"
+                                stroke="currentColor" stroke-width="2" fill="none" />
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                            <path
+                                d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Asistente de Seguridad con IA</h3>
+                    <p class="feature-description">
+                        Asistente AI integrado analiza patrones de uso de secretos, comportamiento de acceso y
+                        configuraciones de infraestructura — sin acceder a los secretos reales. Detecta anomalías,
+                        predice riesgos y recomienda buenas prácticas en tiempo real. Contexto integrado con Git, CI/CD,
+                        Kubernetes y entornos edge/IoT.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 2V8M16 2V8M8 16V22M16 16V22M2 8H8M16 8H22M2 16H8M16 16H22" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" />
+                            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Preparado para Edge e IoT</h3>
+                    <p class="feature-description">
+                        Keyorix aplica Zero Trust, secretos efímeros y controles criptográficos a nodos edge y
+                        dispositivos IoT, garantizando acceso seguro, verificable y flujos automatizados en entornos
+                        distribuidos de baja confianza.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Arquitectura de Claves Seguras</h2>
+                <p class="section-subtitle">
+                    Arquitectura de claves transparente, auditable y efímera en entornos cloud, on-prem, edge e IoT. Las
+                    claves son criptográficamente verificables, de corta duración y rotan automáticamente. Integradas
+                    con AI Assistant para análisis en tiempo real, Web3, servicios cloud y plugins modulares — aplicando
+                    Zero Trust en todo momento.
+                </p>
+            </div>
+            <div class="architecture-visual">
+                <div class="key-architecture-flow">
+                    <div class="architecture-step">
+                        <div class="step-icon generate">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6 10C6 7.79086 7.79086 6 10 6H14C16.2091 6 18 7.79086 18 10V14C18 16.2091 16.2091 18 14 18H10C7.79086 18 6 16.2091 6 14V10Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Generar / Generate</h3>
+                            <p class="step-description">Crear claves efímeras y seguras</p>
+                            <p class="step-description-es">Create strong ephemeral keys</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow">→</div>
+
+                    <div class="architecture-step">
+                        <div class="step-icon ai">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"
+                                    stroke="currentColor" stroke-width="2" fill="none" />
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Asistente AI / AI Assistant</h3>
+                            <p class="step-description">Analiza patrones de uso sin acceder a secretos</p>
+                            <p class="step-description-es">Analyze usage patterns without accessing secrets</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow">→</div>
+
+                    <div class="architecture-step">
+                        <div class="step-icon web3">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Blockchain / Web3</h3>
+                            <p class="step-description">Smart contracts utilizan claves</p>
+                            <p class="step-description-es">Smart contracts use keys</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow">→</div>
+
+                    <div class="architecture-step">
+                        <div class="step-icon edge">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 2V8M16 2V8M8 16V22M16 16V22M2 8H8M16 8H22M2 16H8M16 16H22"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Edge e IoT / Edge & IoT</h3>
+                            <p class="step-description">Claves distribuidas a nodos y dispositivos</p>
+                            <p class="step-description-es">Keys distributed to nodes and devices</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow">→</div>
+
+                    <div class="architecture-step">
+                        <div class="step-icon verify">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Verificar y Rotar / Verify & Rotate</h3>
+                            <p class="step-description">Verificación criptográfica y rotación automática</p>
+                            <p class="step-description-es">Cryptographic verification and auto-rotation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="zero-trust-badge">
+                    <span class="badge-text">Zero Trust Aplicado / Zero Trust Enforced</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source Section -->
+    <section id="open-source" class="open-source">
+        <div class="container">
+            <div class="open-source-content">
+                <h2 class="section-title">Construido por ingenieros, para ingenieros</h2>
+                <p class="open-source-text">
+                    Keyorix es de código abierto y dirigido por la comunidad. Nuestra misión es simplificar
+                    la seguridad en la nube a través de la transparencia y la automatización. Únete a nosotros
+                    en GitHub para contribuir, auditar o extender Keyorix para tu infraestructura.
+                </p>
+
+
+
+                <a href="https://github.com/aibeshkov/KeyOrix" class="btn btn-primary btn-large" target="_blank"
+                    rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 19C4 20.5 4 16.5 2 16M22 16V22C22 22 17 20 12 22C7 20 2 22 2 22V16"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 2L22 7V13L12 18L2 13V7L12 2Z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Visitar Repositorio GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">¿Listo para asegurar tu infraestructura?</h2>
+                    <p class="contact-description">
+                        Comienza con Keyorix hoy. Ya seas una startup o una empresa,
+                        nuestra plataforma de seguridad abierta escala con tus necesidades.
+                    </p>
+
+                    <div class="community-links">
+                        <a href="https://github.com/aibeshkov/KeyOrix" class="community-link" target="_blank"
+                            rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 19C4 20.5 4 16.5 2 16M22 16V22C22 22 17 20 12 22C7 20 2 22 2 22V16"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 2L22 7V13L12 18L2 13V7L12 2Z" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/company/109167215/" class="community-link" target="_blank"
+                            rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H8"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12 11V16M9 13V16M15 13V16" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Blog
+                        </a>
+                        <a href="https://github.com/aibeshkov/KeyOrix" class="community-link" target="_blank"
+                            rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Documentación
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-netlify="true" name="contact-es" method="POST">
+                    <input type="hidden" name="form-name" value="contact-es">
+
+                    <div class="form-group">
+                        <label for="name" class="form-label required">Nombre</label>
+                        <div class="form-input-wrapper">
+                            <input type="text" id="name" name="name" class="form-input"
+                                placeholder="Ingresa tu nombre completo" required>
+                            <svg class="form-input-icon" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="form-focus-indicator"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label required">Correo Electrónico</label>
+                        <div class="form-input-wrapper">
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="tu.email@empresa.com" required>
+                            <svg class="form-input-icon" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="form-focus-indicator"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company" class="form-label">Empresa (opcional)</label>
+                        <div class="form-input-wrapper">
+                            <input type="text" id="company" name="company" class="form-input"
+                                placeholder="Nombre de tu empresa">
+                            <svg class="form-input-icon" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21H21M5 21V7L13 3L21 7V21M9 9H10M9 12H10M9 15H10M14 9H15M14 12H15M14 15H15"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="form-focus-indicator"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label required">Mensaje</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5"
+                            placeholder="Cuéntanos sobre tu proyecto, requisitos de seguridad o preguntas sobre Keyorix..."
+                            required></textarea>
+                        <div class="form-focus-indicator"></div>
+                    </div>
+
+                    <div style="display: none;">
+                        <input name="bot-field" tabindex="-1">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/keyorix-logo-simple.svg" alt="Keyorix" class="footer-logo">
+                    <p class="footer-tagline">Seguro. Verificable. Simple.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="https://github.com/aibeshkov/KeyOrix" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://github.com/aibeshkov/KeyOrix" target="_blank" rel="noopener">Documentación</a>
+                    <a href="privacy.es.html">Privacidad</a>
+                    <a href="terms.es.html">Términos</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Keyorix. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="version-badge">v1.0.0</div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

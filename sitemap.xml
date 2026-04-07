@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://keyorix.com/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/index.es.html" />
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://keyorix.com/index.es.html</loc>
+        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/index.es.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/" />
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://keyorix.com/privacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/privacy.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/privacy.es.html" />
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://keyorix.com/privacy.es.html</loc>
+        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/privacy.es.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/privacy.html" />
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://keyorix.com/terms.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/terms.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/terms.es.html" />
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://keyorix.com/terms.es.html</loc>
+        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/terms.es.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/terms.html" />
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>

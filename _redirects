@@ -1,0 +1,10 @@
+# Clean URL redirects
+/es /index.es.html 200
+/es/* /index.es.html 200
+/privacy /privacy.html 200
+/privacy/es /privacy.es.html 200
+/terms /terms.html 200
+/terms/es /terms.es.html 200
+
+# 404 fallback
+/* /404.html 404
