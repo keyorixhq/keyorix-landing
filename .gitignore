@@ -27,3 +27,11 @@ temp/
 *.sarif
 *.report.json
 
+
+# Environment files
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
