@@ -60,7 +60,10 @@ function initSmoothScroll() {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                const headerHeight = document.querySelector('.header').offsetHeight;
+
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 0;
+
                 const targetPosition = target.offsetTop - headerHeight - 20;
 
                 window.scrollTo({
@@ -70,8 +73,9 @@ function initSmoothScroll() {
             }
         });
     });
-}/
-    / Form Handling with Dark Theme
+}
+
+// Form Handling with Dark Theme
 function initFormHandling() {
     const forms = document.querySelectorAll('.contact-form');
 
@@ -105,12 +109,15 @@ function initFormHandling() {
                 return;
             }
 
-            // Disable submit button
             const submitBtn = form.querySelector('button[type="submit"]');
             if (submitBtn) {
                 submitBtn.disabled = true;
+
                 const originalText = submitBtn.textContent;
-                submitBtn.textContent = submitBtn.textContent.includes('Enviar') ? 'Enviando...' : 'Sending...';
+                submitBtn.textContent =
+                    submitBtn.textContent.includes('Enviar')
+                        ? 'Enviando...'
+                        : 'Sending...';
 
                 setTimeout(() => {
                     submitBtn.disabled = false;
@@ -119,20 +126,19 @@ function initFormHandling() {
             }
         });
 
-        // Enhanced real-time validation feedback
         const inputs = form.querySelectorAll('input, textarea');
+
         inputs.forEach(input => {
-            // Focus and blur effects
             input.addEventListener('focus', function () {
                 this.parentElement.classList.add('focused');
+
                 const icon = this.parentElement.querySelector('.form-input-icon');
-                if (icon) {
-                    icon.style.color = 'var(--accent-blue)';
-                }
+                if (icon) icon.style.color = 'var(--accent-blue)';
             });
 
             input.addEventListener('blur', function () {
                 this.parentElement.classList.remove('focused');
+
                 const icon = this.parentElement.querySelector('.form-input-icon');
 
                 if (this.hasAttribute('required') && !this.value.trim()) {
@@ -140,8 +146,10 @@ function initFormHandling() {
                     this.classList.add('invalid');
                     this.classList.remove('valid');
                     if (icon) icon.style.color = '#ef4444';
+
                 } else if (this.type === 'email' && this.value) {
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
                     if (emailRegex.test(this.value)) {
                         this.style.borderColor = 'var(--accent-green)';
                         this.classList.add('valid');
@@ -153,11 +161,13 @@ function initFormHandling() {
                         this.classList.remove('valid');
                         if (icon) icon.style.color = '#ef4444';
                     }
+
                 } else if (this.value.trim()) {
                     this.style.borderColor = 'var(--accent-green)';
                     this.classList.add('valid');
                     this.classList.remove('invalid');
                     if (icon) icon.style.color = 'var(--accent-green)';
+
                 } else {
                     this.style.borderColor = '';
                     this.classList.remove('valid', 'invalid');
@@ -165,7 +175,6 @@ function initFormHandling() {
                 }
             });
 
-            // Input animation effects
             input.addEventListener('input', function () {
                 if (this.value.trim()) {
                     this.parentElement.classList.add('has-content');
@@ -181,7 +190,6 @@ function initFormHandling() {
 function initAnimations() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Intersection Observer for fade-in animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -196,8 +204,10 @@ function initAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.feature-card, .lifecycle-step, .stat-item');
+    const animatedElements = document.querySelectorAll(
+        '.feature-card, .lifecycle-step, .stat-item'
+    );
+
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -205,30 +215,25 @@ function initAnimations() {
         observer.observe(el);
     });
 
-    // Header background on scroll - Dark Theme
     const header = document.querySelector('.header');
-    let lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
 
-        if (currentScrollY > 100) {
-            header.style.background = 'rgba(13, 13, 13, 0.95)';
-            header.style.backdropFilter = 'blur(20px)';
-        } else {
-            header.style.background = 'rgba(13, 13, 13, 0.8)';
-            header.style.backdropFilter = 'blur(20px)';
+        if (header) {
+            if (currentScrollY > 100) {
+                header.style.background = 'rgba(13, 13, 13, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'rgba(13, 13, 13, 0.8)';
+                header.style.backdropFilter = 'blur(20px)';
+            }
         }
 
-        lastScrollY = currentScrollY;
-    });
-
-    // Parallax effect for hero background
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
         const heroBackground = document.querySelector('.hero-background');
         if (heroBackground) {
-            heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+            heroBackground.style.transform =
+                `translateY(${currentScrollY * 0.5}px)`;
         }
     });
 }
@@ -244,11 +249,9 @@ function initLanguageToggle() {
                 return;
             }
 
-            // Add loading state
             this.style.opacity = '0.7';
             this.textContent = '...';
 
-            // Simulate loading (remove in production)
             setTimeout(() => {
                 window.location.href = this.href;
             }, 300);
@@ -258,15 +261,15 @@ function initLanguageToggle() {
 
 // Accessibility Enhancements
 function initAccessibility() {
-    // Add skip to content link
     const skipLink = document.createElement('a');
     skipLink.href = '#home';
     skipLink.className = 'skip-link';
     skipLink.textContent = 'Skip to content';
+
     document.body.insertBefore(skipLink, document.body.firstChild);
 
-    // Keyboard navigation for mobile menu
     const navToggle = document.getElementById('nav-toggle');
+
     if (navToggle) {
         navToggle.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -276,9 +279,9 @@ function initAccessibility() {
         });
     }
 
-    // Focus management
     const navMenu = document.getElementById('nav-menu');
-    if (navMenu) {
+
+    if (navMenu && navToggle) {
         navMenu.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && this.classList.contains('active')) {
                 this.classList.remove('active');
@@ -287,20 +290,24 @@ function initAccessibility() {
         });
     }
 
-    // Screen reader announcements
     const announcer = document.createElement('div');
     announcer.setAttribute('aria-live', 'polite');
     announcer.setAttribute('aria-atomic', 'true');
     announcer.className = 'sr-only';
-    announcer.style.cssText = 'position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;';
+
+    announcer.style.cssText =
+        'position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;';
+
     document.body.appendChild(announcer);
+
     window.announcer = announcer;
 }
 
-// Dark Theme Notification System
+// Notification System
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
+
     notification.style.cssText = `
         position: fixed;
         top: 100px;
@@ -309,28 +316,28 @@ function showNotification(message, type = 'info') {
         color: white;
         padding: 1rem 1.5rem;
         border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
         z-index: 1001;
         opacity: 0;
         transform: translateX(100%);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s ease;
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255,255,255,0.1);
     `;
+
     notification.textContent = message;
 
     document.body.appendChild(notification);
 
-    // Animate in
     setTimeout(() => {
         notification.style.opacity = '1';
         notification.style.transform = 'translateX(0)';
     }, 100);
 
-    // Remove after 5 seconds
     setTimeout(() => {
         notification.style.opacity = '0';
         notification.style.transform = 'translateX(100%)';
+
         setTimeout(() => {
             if (document.body.contains(notification)) {
                 document.body.removeChild(notification);
@@ -338,44 +345,45 @@ function showNotification(message, type = 'info') {
         }, 300);
     }, 5000);
 
-    // Announce to screen readers
     if (window.announcer) {
         window.announcer.textContent = message;
     }
 }
 
-// Handle form success messages
+// URL success handling
 const urlParams = new URLSearchParams(window.location.search);
+
 if (urlParams.get('success') === 'true') {
     const isSpanish = window.location.pathname.includes('.es.html');
+
     const message = isSpanish
         ? 'Gracias — hemos recibido tu mensaje. Te contactaremos pronto.'
-        : 'Thanks — we received your message. We\'ll get back to you soon.';
+        : "Thanks — we received your message. We'll get back to you soon.";
 
     setTimeout(() => {
         showNotification(message, 'success');
     }, 1000);
 }
 
-// Performance optimization: Lazy load images
+// Lazy loading
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
 
     if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
                     img.removeAttribute('data-src');
-                    imageObserver.unobserve(img);
+                    observer.unobserve(img);
                 }
             });
         });
 
-        images.forEach(img => imageObserver.observe(img));
+        images.forEach(img => observer.observe(img));
+
     } else {
-        // Fallback for older browsers
         images.forEach(img => {
             img.src = img.dataset.src;
             img.removeAttribute('data-src');
@@ -383,30 +391,31 @@ function initLazyLoading() {
     }
 }
 
-// Initialize lazy loading
 document.addEventListener('DOMContentLoaded', initLazyLoading);
 
-// Export functions for global use
+// Global export
 window.Keyorix = {
     showNotification
 };
 
-// Add some interactive effects for the dark theme
+// Button effects
 document.addEventListener('DOMContentLoaded', function () {
-    // Add glow effect to buttons on hover
     const buttons = document.querySelectorAll('.btn-primary');
+
     buttons.forEach(btn => {
         btn.addEventListener('mouseenter', function () {
-            this.style.boxShadow = '0 8px 32px rgba(45, 156, 219, 0.4)';
+            this.style.boxShadow =
+                '0 8px 32px rgba(45,156,219,0.4)';
         });
 
         btn.addEventListener('mouseleave', function () {
-            this.style.boxShadow = '0 4px 16px rgba(45, 156, 219, 0.3)';
+            this.style.boxShadow =
+                '0 4px 16px rgba(45,156,219,0.3)';
         });
     });
 
-    // Add subtle animation to feature cards
     const featureCards = document.querySelectorAll('.feature-card');
+
     featureCards.forEach(card => {
         card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px) scale(1.02)';
