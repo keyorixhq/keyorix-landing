@@ -6,5 +6,8 @@
 /terms /terms.html 200
 /terms/es /terms.es.html 200
 
+/vault-health /vault-health.html 200
+/vault-health-thanks /vault-health-thanks.html 200
+
 # 404 fallback
 /* /404.html 404

@@ -40,6 +40,16 @@
   to = "/terms.es.html"
   status = 200
 
+[[redirects]]
+  from = "/vault-health"
+  to = "/vault-health.html"
+  status = 200
+
+[[redirects]]
+  from = "/vault-health-thanks"
+  to = "/vault-health-thanks.html"
+  status = 200
+
 # 404 page
 [[redirects]]
   from = "/*"
@@ -78,3 +88,5 @@
     name = "contact"
   [forms.contact-es]
     name = "contact-es"
+  [forms.vault-health]
+    name = "vault-health"
