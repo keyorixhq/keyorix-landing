@@ -1,57 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://keyorix.com/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/index.es.html" />
+        <loc>https://www.keyorix.com/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.keyorix.com/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.keyorix.com/index.es.html" />
         <lastmod>2025-01-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://keyorix.com/index.es.html</loc>
-        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/index.es.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/" />
+        <loc>https://www.keyorix.com/index.es.html</loc>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.keyorix.com/index.es.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.keyorix.com/" />
         <lastmod>2025-01-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://keyorix.com/privacy.html</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/privacy.html" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/privacy.es.html" />
+        <loc>https://www.keyorix.com/privacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.keyorix.com/privacy.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.keyorix.com/privacy.es.html" />
         <lastmod>2025-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://keyorix.com/privacy.es.html</loc>
-        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/privacy.es.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/privacy.html" />
+        <loc>https://www.keyorix.com/privacy.es.html</loc>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.keyorix.com/privacy.es.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.keyorix.com/privacy.html" />
         <lastmod>2025-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://keyorix.com/terms.html</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/terms.html" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/terms.es.html" />
+        <loc>https://www.keyorix.com/terms.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.keyorix.com/terms.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.keyorix.com/terms.es.html" />
         <lastmod>2025-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://keyorix.com/terms.es.html</loc>
-        <xhtml:link rel="alternate" hreflang="es" href="https://keyorix.com/terms.es.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://keyorix.com/terms.html" />
+        <loc>https://www.keyorix.com/terms.es.html</loc>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.keyorix.com/terms.es.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.keyorix.com/terms.html" />
         <lastmod>2025-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://keyorix.com/vault-health</loc>
+        <loc>https://www.keyorix.com/vault-health</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.keyorix.com/vault-health/es</loc>
+        <lastmod>2026-09-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>

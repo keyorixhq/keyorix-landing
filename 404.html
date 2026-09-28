@@ -7,6 +7,7 @@
     <title>Page Not Found - Keyorix</title>
     <meta name="description" content="The page you're looking for doesn't exist. Return to Keyorix homepage.">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -135,7 +136,7 @@
                     </svg>
                     Go Home
                 </a>
-                <a href="https://github.com/aibeshkov/KeyOrix" class="btn btn-secondary btn-large" target="_blank"
+                <a href="https://github.com/keyorixhq/keyorix" class="btn btn-secondary btn-large" target="_blank"
                     rel="noopener">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 19C4 20.5 4 16.5 2 16M22 16V22C22 22 17 20 12 22C7 20 2 22 2 22V16"
@@ -170,9 +171,9 @@
         const path = window.location.pathname.toLowerCase();
         const redirects = {
             '/home': '/index.html',
-            '/docs': 'https://github.com/aibeshkov/KeyOrix#readme',
-            '/github': 'https://github.com/aibeshkov/KeyOrix',
-            '/documentation': 'https://github.com/aibeshkov/KeyOrix#readme'
+            '/docs': 'https://github.com/keyorixhq/keyorix#readme',
+            '/github': 'https://github.com/keyorixhq/keyorix',
+            '/documentation': 'https://github.com/keyorixhq/keyorix#readme'
         };
 
         if (redirects[path]) {
@@ -181,7 +182,6 @@
             }, 3000);
         }
     </script>
-    <div class="version-badge">v1.0.0</div>
 </body>
 
 </html>

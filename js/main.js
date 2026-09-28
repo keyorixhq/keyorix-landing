@@ -261,8 +261,10 @@ function initLanguageToggle() {
 
 // Accessibility Enhancements
 function initAccessibility() {
+    const skipTarget = document.getElementById('home') || document.querySelector('main');
+    if (skipTarget && !skipTarget.id) skipTarget.id = 'main-content';
     const skipLink = document.createElement('a');
-    skipLink.href = '#home';
+    skipLink.href = skipTarget ? '#' + skipTarget.id : '#';
     skipLink.className = 'skip-link';
     skipLink.textContent = 'Skip to content';
 

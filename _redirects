@@ -1,3 +1,17 @@
+# Internal files: never serve (force 404)
+/.gitignore /404.html 404!
+/.netlify-deploy-checklist.md /404.html 404!
+/DEPLOYMENT.md /404.html 404!
+/DISCORD_TO_BLOG_UPDATED.md /404.html 404!
+/DOCUMENTATION_LINKS_UPDATED.md /404.html 404!
+/FEATURES_SECTION_UPDATED.md /404.html 404!
+/GITHUB_LINKS_UPDATED.md /404.html 404!
+/LOGO_UPDATED.md /404.html 404!
+/NETLIFY_READY.md /404.html 404!
+/README.md /404.html 404!
+/netlify.toml /404.html 404!
+/package.json /404.html 404!
+
 # Clean URL redirects
 /es /index.es.html 200
 /es/* /index.es.html 200
@@ -8,6 +22,8 @@
 
 /vault-health /vault-health.html 200
 /vault-health-thanks /vault-health-thanks.html 200
+/vault-health/es /vault-health.es.html 200
+/vault-health-thanks/es /vault-health-thanks.es.html 200
 
 # 404 fallback
 /* /404.html 404

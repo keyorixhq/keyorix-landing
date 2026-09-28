@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de salud de Vault y evaluación - Keyorix</title>
+    <meta name="description"
+        content="Análisis de salud gratuito y de solo lectura para HashiCorp Vault y OpenBao. Un comando, un informe que puedes compartir y una revisión experta opcional de los hallazgos.">
+    <link rel="canonical" href="https://www.keyorix.com/vault-health/es">
+    <link rel="alternate" hreflang="en" href="https://www.keyorix.com/vault-health">
+    <link rel="alternate" hreflang="es" href="https://www.keyorix.com/vault-health/es">
+    <meta property="og:title" content="Análisis de salud de Vault - Keyorix">
+    <meta property="og:description"
+        content="Análisis de salud gratuito y de solo lectura para HashiCorp Vault y OpenBao. Nunca escribe en Vault y nunca lee el valor de un secreto.">
+    <meta property="og:image" content="https://www.keyorix.com/assets/og-keyorix.png">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        .vh-page { padding: 120px 0 80px; min-height: 100vh; }
+        .vh-content { max-width: 880px; margin: 0 auto; }
+        .vh-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .vh-title { font-size: 2.6rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+        .vh-lead { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; }
+        .vh-card h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--primary-accent); }
+        .vh-card p, .vh-card li { color: var(--text-secondary); line-height: 1.7; }
+        .vh-card p { margin-bottom: 1rem; }
+        .vh-card ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .vh-card li { margin-bottom: 0.5rem; }
+        .vh-card a { color: var(--primary-accent); }
+        .vh-code {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            overflow-x: auto;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0.75rem 0 1rem;
+            white-space: pre;
+            color: var(--text-primary);
+        }
+        .vh-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .vh-check { background: rgba(0, 196, 255, 0.06); border: 1px solid rgba(0, 196, 255, 0.18); border-radius: 8px; padding: 1rem 1.25rem; }
+        .vh-check strong { display: block; margin-bottom: 0.25rem; }
+        .vh-check span { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+        .vh-guarantee { border-left: 3px solid var(--primary-accent); padding-left: 1.25rem; }
+        .vh-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .vh-steps { counter-reset: step; list-style: none; padding-left: 0 !important; }
+        .vh-steps li { counter-increment: step; position: relative; padding-left: 2.75rem; margin-bottom: 1.25rem; }
+        .vh-steps li::before {
+            content: counter(step);
+            position: absolute; left: 0; top: 0;
+            width: 1.8rem; height: 1.8rem; border-radius: 50%;
+            background: rgba(0, 196, 255, 0.15); color: var(--primary-accent);
+            font-weight: 700; font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .vh-note { font-size: 0.9rem; color: var(--text-secondary); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-accent); text-decoration: none; margin-bottom: 2rem; transition: var(--transition); }
+        .back-link:hover { color: var(--text-primary); }
+        @media (max-width: 640px) {
+            .vh-title { font-size: 2rem; }
+            .vh-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.es.html" class="logo">
+                    <img src="assets/keyorix-logo-simple.svg" alt="Keyorix" class="logo-img">
+                </a>
+                <div class="nav-actions">
+                    <div class="language-toggle">
+                        <a href="vault-health.html" class="lang-link">EN</a>
+                        <a href="#" class="lang-link active">ES</a>
+                    </div>
+                    <a href="#review" class="btn btn-primary">Solicitar revisión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="vh-page">
+        <div class="container">
+            <div class="vh-content">
+                <a href="index.es.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Volver al inicio
+                </a>
+
+                <div class="vh-card">
+                    <h1 class="vh-title">Análisis de salud de Vault</h1>
+                    <p class="vh-lead">
+                        Una revisión de salud gratuita y de solo lectura para HashiCorp Vault y OpenBao. Ejecuta un
+                        comando contra tu instalación y obtén un informe que puedes leer, compartir con tu equipo o
+                        enviarnos para una segunda opinión. Pensado para ese Vault que lleva años funcionando y que
+                        nadie ha revisado de principio a fin desde hace tiempo.
+                    </p>
+                    <div class="vh-actions">
+                        <a href="#run" class="btn btn-primary">Ejecutar el análisis</a>
+                        <a href="#review" class="btn btn-secondary">Obtener una revisión experta</a>
+                    </div>
+                </div>
+
+                <div class="vh-card">
+                    <h2>Seguro para ejecutar en producción</h2>
+                    <div class="vh-guarantee">
+                        <p><strong>Nunca escribe nada en Vault y nunca lee el valor de un secreto.</strong>
+                            Ambas cosas están garantizadas en el código, no por convención:</p>
+                        <ul>
+                            <li>El cliente de Vault del analizador solo puede enviar peticiones <code>GET</code> y
+                                <code>LIST</code>. Cualquier otro método se rechaza dentro del propio cliente antes de
+                                construir la petición.</li>
+                            <li>En los secretos KV solo lee <code>/metadata</code> (versión, fecha de última
+                                modificación), nunca <code>/data</code>. Las pruebas colocan un valor secreto y fallan si
+                                aparece en cualquier formato del informe.</li>
+                            <li>Nuestra integración continua ejecuta el análisis completo contra servidores reales de
+                                Vault y OpenBao y cuenta cada método HTTP que llega realmente a ellos.</li>
+                        </ul>
+                        <p>Solo se comunica con tu Vault: sin telemetría y sin llamadas a nosotros ni a HashiCorp.
+                            Incluye una política de Vault mínima y de solo lectura. Si tu token no puede leer algo, esa
+                            comprobación aparece como "no comprobado" y el análisis continúa.</p>
+                    </div>
+                </div>
+
+                <div class="vh-card">
+                    <h2>Qué comprueba</h2>
+                    <p>Cada hallazgo incluye su gravedad, la evidencia, por qué importa y una solución concreta.</p>
+                    <div class="vh-grid">
+                        <div class="vh-check"><strong>Versión y licencia</strong><span>Versiones sin soporte, compilación BSL o MPL, detección de OpenBao, licencia Enterprise.</span></div>
+                        <div class="vh-check"><strong>Sellado y desellado</strong><span>Shamir o auto-unseal, fragmentos de clave y umbral, estado de sellado.</span></div>
+                        <div class="vh-check"><strong>Alta disponibilidad y almacenamiento</strong><span>Backend de almacenamiento, riesgo de nodo único, nodos raft, estado de autopilot.</span></div>
+                        <div class="vh-check"><strong>Registro de auditoría</strong><span>Sin dispositivo de auditoría, o solo uno (un punto único de fallo).</span></div>
+                        <div class="vh-check"><strong>Métodos de autenticación</strong><span>Configuraciones solo con token o userpass; secret IDs de AppRole que no caducan o permiten usos ilimitados.</span></div>
+                        <div class="vh-check"><strong>Políticas</strong><span>Exceso de políticas y permisos comodín o sobre <code>sys/*</code> con sudo o escritura.</span></div>
+                        <div class="vh-check"><strong>Higiene de tokens y leases</strong><span>TTL ilimitados o muy largos en montajes y métodos de autenticación; número de leases.</span></div>
+                        <div class="vh-check"><strong>Motores de secretos</strong><span>Inventario de motores, KV v1 o v2, configuración check-and-set, secretos sin cambios desde hace más de un año.</span></div>
+                        <div class="vh-check"><strong>TLS, namespaces y copias de seguridad</strong><span>TLS del listener, namespaces Enterprise, si hay snapshots automáticos visibles.</span></div>
+                    </div>
+                    <p class="vh-note" style="margin-top:1rem">El informe también incluye una puntuación de 0 a 100 (con la
+                        fórmula junto a ella), tus cinco riesgos principales y un resumen de "preparación para la
+                        migración": cuántos de tus secretos KV podrían importarse a Keyorix y qué motores no.</p>
+                </div>
+
+                <div class="vh-card" id="run">
+                    <h2>Ejecútalo en cinco minutos</h2>
+                    <ol class="vh-steps">
+                        <li>Descarga <code>keyorix-migrate</code> para tu plataforma (Linux o macOS, amd64 o arm64)
+                            desde la <a href="https://github.com/keyorixhq/keyorix/releases" target="_blank"
+                                rel="noopener">página de versiones en GitHub</a>. Es un único binario con suma de
+                            verificación firmada y SBOM. El archivo de política de solo lectura,
+                            <code>healthscan-policy.hcl</code>, está en el mismo repositorio.</li>
+                        <li>Crea un token de corta duración y solo lectura:
+<div class="vh-code">vault policy write healthscan-readonly healthscan-policy.hcl
+vault token create -policy=healthscan-readonly -ttl=1h</div>
+                        </li>
+                        <li>Ejecuta el análisis:
+<div class="vh-code">export VAULT_TOKEN=...   # el token del paso 2
+keyorix-migrate vault scan \
+  --addr https://vault.example.com:8200 \
+  --output ./report</div>
+                            Obtendrás <code>report.html</code>, <code>report.md</code> y <code>report.json</code>.
+                            ¿CA privada? Añade <code>--cacert ca.pem</code>. También admite namespaces de Vault e
+                            inicio de sesión con AppRole.
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="vh-card" id="review">
+                    <h2>¿Quieres que un experto revise los hallazgos?</h2>
+                    <p><strong>Revisión gratuita.</strong> Envíanos tu <code>report.json</code> y repasaremos los
+                        hallazgos contigo en una llamada de 30 minutos: qué es urgente, qué puede esperar y qué está
+                        bien como está. El JSON solo contiene hallazgos y metadatos de configuración, nunca valores de
+                        secretos.</p>
+                    <p><strong>Evaluación de Salud de Vault.</strong> Un servicio a precio cerrado para equipos que
+                        quieren la visión completa: arquitectura y topología, revisión de políticas y accesos, higiene de
+                        los motores de secretos, riesgos operativos y de recuperación ante desastres, y una estimación
+                        honesta de lo que te cuesta mantener tu Vault cada mes. Recibes un informe escrito con hallazgos
+                        priorizados y recomendaciones concretas, un resumen ejecutivo de una página y una sesión de
+                        presentación. No es una prueba de penetración ni una certificación de cumplimiento, y si
+                        migrar a Keyorix no es lo adecuado para ti, el informe lo dirá.</p>
+
+                    <form class="contact-form" data-netlify="true" netlify-honeypot="bot-field" name="vault-health"
+                        method="POST" enctype="multipart/form-data" action="/vault-health-thanks/es" style="margin-top:1.5rem">
+                        <input type="hidden" name="form-name" value="vault-health">
+                        <input type="hidden" name="language" value="es">
+
+                        <div class="form-group">
+                            <label for="vh-name" class="form-label required">Nombre</label>
+                            <div class="form-input-wrapper">
+                                <input type="text" id="vh-name" name="name" class="form-input" placeholder="Tu nombre completo" required>
+                            </div>
+                            <div class="form-focus-indicator"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vh-email" class="form-label required">Correo de trabajo</label>
+                            <div class="form-input-wrapper">
+                                <input type="email" id="vh-email" name="email" class="form-input" placeholder="tu.correo@empresa.com" required>
+                            </div>
+                            <div class="form-focus-indicator"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vh-company" class="form-label">Empresa (opcional)</label>
+                            <div class="form-input-wrapper">
+                                <input type="text" id="vh-company" name="company" class="form-input" placeholder="Nombre de tu empresa">
+                            </div>
+                            <div class="form-focus-indicator"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vh-interest" class="form-label required">Me interesa</label>
+                            <div class="form-input-wrapper">
+                                <select id="vh-interest" name="interest" class="form-input" required>
+                                    <option value="walkthrough">Revisión gratuita de mi informe</option>
+                                    <option value="assessment">Evaluación de Salud de Vault (de pago)</option>
+                                    <option value="migration">Migrar de Vault a Keyorix</option>
+                                </select>
+                            </div>
+                            <div class="form-focus-indicator"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vh-report" class="form-label">report.json (opcional)</label>
+                            <div class="form-input-wrapper">
+                                <input type="file" id="vh-report" name="report" class="form-input" accept=".json,application/json">
+                            </div>
+                            <div class="form-focus-indicator"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vh-message" class="form-label">¿Algo que debamos saber? (opcional)</label>
+                            <textarea id="vh-message" name="message" class="form-textarea" rows="4"
+                                placeholder="Versión de Vault, cuánto tiempo lleva funcionando, quién lo gestiona hoy..."></textarea>
+                            <div class="form-focus-indicator"></div>
+                        </div>
+
+                        <div style="display: none;">
+                            <input name="bot-field" tabindex="-1">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Enviar</button>
+                        <p class="vh-note" style="margin-top:1rem">Solo usamos tus datos para responder a esta solicitud.
+                            Consulta nuestra <a href="privacy.es.html">política de privacidad</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/keyorix-logo-simple.svg" alt="Keyorix" class="footer-logo">
+                    <p class="footer-tagline">Seguro. Verificable. Simple.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/keyorixhq/keyorix" target="_blank" rel="noopener">GitHub</a>
+                    <a href="privacy.es.html">Privacidad</a>
+                    <a href="terms.es.html">Términos</a>
+                    <a href="index.es.html#contact">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Keyorix. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2"></script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 {
     "name": "keyorix-landing",
     "version": "1.0.0",
-    "description": "Keyorix - Secure, Verify, Simplify. Professional landing page for cloud security and secrets management platform.",
+    "description": "Keyorix website (www.keyorix.com) - static site on Netlify.",
     "main": "index.html",
     "scripts": {
         "start": "python3 -m http.server 8000",
@@ -19,16 +19,17 @@
         "open-source"
     ],
     "author": "Keyorix Team",
-    "license": "MIT",
-    "homepage": "https://keyorix.com",
+    "license": "UNLICENSED",
+    "homepage": "https://www.keyorix.com",
     "repository": {
         "type": "git",
-        "url": "https://github.com/aibeshkov/KeyOrix"
+        "url": "https://github.com/keyorixhq/keyorix-landing"
     },
     "bugs": {
-        "url": "https://github.com/aibeshkov/KeyOrix/issues"
+        "url": "https://github.com/keyorixhq/keyorix-landing/issues"
     },
     "engines": {
         "node": ">=16.0.0"
-    }
+    },
+    "private": true
 }

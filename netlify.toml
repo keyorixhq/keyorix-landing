@@ -50,6 +50,16 @@
   to = "/vault-health-thanks.html"
   status = 200
 
+[[redirects]]
+  from = "/vault-health/es"
+  to = "/vault-health.es.html"
+  status = 200
+
+[[redirects]]
+  from = "/vault-health-thanks/es"
+  to = "/vault-health-thanks.es.html"
+  status = 200
+
 # 404 page
 [[redirects]]
   from = "/*"
