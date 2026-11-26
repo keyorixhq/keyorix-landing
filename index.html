@@ -233,9 +233,9 @@
                     </div>
                     <h3 class="feature-title">Compliance & Standards</h3>
                     <p class="feature-description">
-                        EU Compliance-by-Design: NIS2, DORA, AI Act, GDPR, ENS. Built-in controls, encryption, audit
-                        trails, and data residency ensure traceability, resilience, and regulatory alignment across all
-                        environments.
+                        Designed to support EU regulatory requirements such as NIS2, DORA, the AI Act, GDPR and ENS. Built-in controls,
+                        encryption, audit trails and data residency help with traceability and resilience. Keyorix is not itself
+                        certified; compliance depends on how you deploy and operate it.
                     </p>
                 </div>
 
@@ -480,8 +480,9 @@
                     </div>
                 </div>
 
-                <form class="contact-form" data-netlify="true" name="contact" method="POST">
+                <form class="contact-form" data-netlify="true" netlify-honeypot="bot-field" name="contact" method="POST">
                     <input type="hidden" name="form-name" value="contact">
+                    <p style="display:none"><label>Do not fill: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
                     <div class="form-group">
                         <label for="name" class="form-label required">Name</label>
@@ -554,6 +555,7 @@
                         </svg>
                         Send Message
                     </button>
+                <p class="vh-note" style="margin-top:1rem;font-size:0.85rem;opacity:0.8">By sending this form you agree that we use your details only to reply to your request. See our <a href="privacy.html">privacy policy</a>.</p>
                 </form>
             </div>
         </div>
@@ -574,12 +576,13 @@
                     <a href="vault-health.html">Vault health scan</a>
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
+                    <a href="legal.html">Legal notice</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Keyorix. All rights reserved.</p>
+                <p class="footer-copyright">© 2026 Keyorix S.L. All rights reserved.</p>
             </div>
         </div>
     </footer>

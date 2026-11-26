@@ -1,6 +1,6 @@
 # Internal files: never serve (force 404)
 /.gitignore /404.html 404!
-/.netlify-deploy-checklist.md /404.html 404!
+/DEPLOY_CHECKLIST.md /404.html 404!
 /DEPLOYMENT.md /404.html 404!
 /DISCORD_TO_BLOG_UPDATED.md /404.html 404!
 /DOCUMENTATION_LINKS_UPDATED.md /404.html 404!
@@ -9,6 +9,7 @@
 /LOGO_UPDATED.md /404.html 404!
 /NETLIFY_READY.md /404.html 404!
 /README.md /404.html 404!
+/BACKLOG.md /404.html 404!
 /netlify.toml /404.html 404!
 /package.json /404.html 404!
 
@@ -17,6 +18,8 @@
 /es/* /index.es.html 200
 /privacy /privacy.html 200
 /privacy/es /privacy.es.html 200
+/legal /legal.html 200
+/legal/es /legal.es.html 200
 /terms /terms.html 200
 /terms/es /terms.es.html 200
 

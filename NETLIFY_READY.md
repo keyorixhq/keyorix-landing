@@ -54,7 +54,7 @@ keyorix-landing/
 ├── 📦 package.json           # Project metadata
 ├── 📚 README.md              # Documentation
 ├── 🚀 DEPLOYMENT.md          # Deployment guide
-├── ✅ .netlify-deploy-checklist.md # Deployment checklist
+├── ✅ DEPLOY_CHECKLIST.md        # Deployment checklist
 ├── 🎨 css/main.css           # Optimized stylesheet
 ├── ⚡ js/main.js             # Enhanced JavaScript
 └── 🖼️ assets/               # Optimized images and icons
