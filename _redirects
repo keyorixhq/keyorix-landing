@@ -1,6 +1,6 @@
 # Internal files: never serve (force 404)
 /.gitignore /404.html 404!
-/.netlify-deploy-checklist.md /404.html 404!
+/DEPLOY_CHECKLIST.md /404.html 404!
 /DEPLOYMENT.md /404.html 404!
 /DISCORD_TO_BLOG_UPDATED.md /404.html 404!
 /DOCUMENTATION_LINKS_UPDATED.md /404.html 404!
